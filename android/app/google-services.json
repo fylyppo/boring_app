@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82498062553",
+    "project_id": "boringapp-20c67",
+    "storage_bucket": "boringapp-20c67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82498062553:android:439a482ad129eefd1f56c8",
+        "android_client_info": {
+          "package_name": "com.filiptuzimek.boring_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82498062553-lnh65sf2e77b8uqj3937rsp2v3iesila.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDURIK6sc7jJ9dVfSVtzDArMoXu92u9iLo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82498062553-lnh65sf2e77b8uqj3937rsp2v3iesila.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
