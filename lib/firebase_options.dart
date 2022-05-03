@@ -53,7 +53,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '82498062553',
     projectId: 'boringapp-20c67',
     storageBucket: 'boringapp-20c67.appspot.com',
-    iosClientId: '82498062553-cs5m6hncfo0pri3r8k47iglldjh0u360.apps.googleusercontent.com',
+    iosClientId:
+        '82498062553-cs5m6hncfo0pri3r8k47iglldjh0u360.apps.googleusercontent.com',
     iosBundleId: 'com.filiptuzimek.boringApp',
   );
 }
