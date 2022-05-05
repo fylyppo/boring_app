@@ -22,7 +22,7 @@ dependencies:
   injectable: ^1.5.3
   another_flushbar: ^1.10.28
   google_fonts: ^2.3.2
-  path_provider: ^2.0.9
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:
