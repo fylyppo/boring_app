@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:injectable/injectable.dart';
 import 'firebase_options.dart';
 import 'injection.dart';
+import 'presentation/core/app_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,7 +11,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   configureInjection(Environment.prod);
-  runApp(const MyApp());
+  runApp(const AppWidget());
 }
 
 class MyApp extends StatelessWidget {
