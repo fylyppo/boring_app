@@ -4,12 +4,14 @@ import 'package:injectable/injectable.dart';
 import 'firebase_options.dart';
 import 'injection.dart';
 import 'presentation/core/app_widget.dart';
+import 'presentation/routes/router.gr.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  getIt.registerSingleton<AppRouter>(AppRouter());
   configureInjection(Environment.prod);
   runApp(const AppWidget());
 }
@@ -24,7 +26,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      
     );
   }
 }

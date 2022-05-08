@@ -4,6 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../application/auth/sign_in_form/bloc/sign_in_form_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../injection.dart';
+import '../../routes/router.gr.dart';
+
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
 
@@ -26,7 +29,7 @@ class SignInForm extends StatelessWidget {
                   ),).show(context);
               },
               (_) {
-                // TODO: Navigate
+                return getIt<AppRouter>().replaceNamed('/home-page');
               },
             ),
           );
