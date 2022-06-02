@@ -65,10 +65,10 @@ class NoteRepository implements INoteRepository {
       final noteDto = NoteDto.fromDomain(note);
 
       await userDoc.noteCollection.doc(noteDto.id).set(noteDto.toJson());
-      
+
       return right(unit);
     } on PlatformException catch (e) {
-      if (e.message!.contains('PERMISSION_DENIED')) {
+      if (e.message!.contains('permission_denied')) {
         return left(const NoteFailure.insufficientPermission());
       } else {
         return left(const NoteFailure.unexpected());
@@ -97,8 +97,22 @@ class NoteRepository implements INoteRepository {
   }
 
   @override
-  Future<Either<NoteFailure, Unit>> delete(Note note) {
-    // TODO: implement delete
-    throw UnimplementedError();
+  Future<Either<NoteFailure, Unit>> delete(Note note) async {
+    try {
+      final userDoc = await firestore.userDocument();
+      final noteId = note.id.getOrCrash();
+
+      await userDoc.noteCollection.doc(noteId).delete();
+
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e.message!.contains('permission_denied')) {
+        return left(const NoteFailure.insufficientPermission());
+      } else if (e.message!.contains('not_found')) {
+        return left(const NoteFailure.unableToUpdate());
+      } else {
+        return left(const NoteFailure.unexpected());
+      }
+    }
   }
 }
