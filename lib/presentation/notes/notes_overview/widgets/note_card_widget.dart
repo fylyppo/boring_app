@@ -4,6 +4,8 @@ import 'package:kt_dart/collection.dart';
 import '../../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../../domain/notes/note.dart';
 import '../../../../domain/notes/todo_item.dart';
+import '../../../../injection.dart';
+import '../../../routes/router.gr.dart';
 
 class NoteCard extends StatelessWidget {
   final Note note;
@@ -16,7 +18,7 @@ class NoteCard extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
-          // TODO: Implement navigation
+          getIt<AppRouter>().pushNamed('/note-form-page');
         },
         onLongPress: () {
           final noteActorBloc = context.read<NoteActorBloc>();
