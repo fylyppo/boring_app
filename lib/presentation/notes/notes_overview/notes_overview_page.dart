@@ -8,6 +8,7 @@ import '../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../application/notes/note_watcher/note_watcher_bloc.dart';
 import '../../../injection.dart';
 import '../../routes/router.gr.dart';
+import 'widgets/uncompleted_switch.dart';
 
 class NotesOverviewPage extends StatelessWidget {
   const NotesOverviewPage({Key? key}) : super(key: key);
@@ -63,11 +64,8 @@ class NotesOverviewPage extends StatelessWidget {
                 context.read<AuthBloc>().add(const AuthEvent.signedOut());
               },
             ),
-            actions: <Widget>[
-              IconButton(
-                icon: const Icon(Icons.indeterminate_check_box),
-                onPressed: () {},
-              )
+            actions: const [
+              UncompletedSwitch(),
             ],
           ),
           body: const NotesOverviewBody(),
