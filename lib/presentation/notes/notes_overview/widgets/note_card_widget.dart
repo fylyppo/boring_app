@@ -1,3 +1,4 @@
+import 'package:boring_app/presentation/notes/note_form/note_form_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/collection.dart';
@@ -18,7 +19,7 @@ class NoteCard extends StatelessWidget {
       color: note.color.getOrCrash(),
       child: InkWell(
         onTap: () {
-          getIt<AppRouter>().pushNamed('/note-form-page');
+          getIt<AppRouter>().push(NoteFormRoute(editedNote: note,));
         },
         onLongPress: () {
           final noteActorBloc = context.read<NoteActorBloc>();

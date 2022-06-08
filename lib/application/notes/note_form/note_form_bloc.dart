@@ -58,7 +58,6 @@ class NoteFormBloc extends Bloc<NoteFormEvent, NoteFormState> {
             ? await noteRepository.update(state.note)
             : await noteRepository.create(state.note);
       }
-
       emit(state.copyWith(
         isSaving: false,
         showErrorMessages: AutovalidateMode.always,

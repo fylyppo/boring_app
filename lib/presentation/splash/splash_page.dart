@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         state.mapOrNull(
-            authenticated: (_) => getIt<AppRouter>().replaceNamed('/home-page'),
+            authenticated: (_) => getIt<AppRouter>().replaceNamed('/notes-overview-page'),
             unauthenticated: (_) => getIt<AppRouter>().replaceNamed('/sign-in-page'));
       },
       child: const Scaffold(

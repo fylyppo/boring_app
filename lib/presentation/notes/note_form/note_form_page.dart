@@ -12,11 +12,11 @@ import 'widgets/body_field_widget.dart';
 import 'widgets/color_field_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
-  final Note editedNote;
+  final Note? editedNote;
 
   const NoteFormPage({
     Key? key,
-    required this.editedNote,
+    this.editedNote,
   }) : super(key: key);
 
   @override
