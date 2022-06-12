@@ -143,7 +143,8 @@ class __$NoteDtoCopyWithImpl<$Res> extends _$NoteDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_NoteDto extends _NoteDto {
   const _$_NoteDto(
       {@JsonKey(ignore: true) this.id,

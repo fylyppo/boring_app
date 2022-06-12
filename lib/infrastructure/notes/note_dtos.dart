@@ -14,7 +14,7 @@ part 'note_dtos.g.dart';
 @freezed
 abstract class NoteDto implements _$NoteDto {
   const NoteDto._();
-
+  @JsonSerializable(explicitToJson: true)
   const factory NoteDto({
     //@Default(null)
     @JsonKey(ignore: true) String? id,
