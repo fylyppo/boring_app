@@ -8,7 +8,7 @@ The BoringApp app allows user to write notes and tasks, check which is done, del
 ## Installation
 
 1. Clone or download the repo
-	git clone https://github.com/fylyppo/live_football.git
+	git clone https://github.com/fylyppo/boring_app.git
 2. Install packages
 	flutter pub get
   
